@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登录界面</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../test/css/test.css">
+</head>
+<body>
+	<form method="post" id="form1" class="form_login">
+		<div class="user">用户名： <input type="text" id="userName" oncopy="return false"></div>
+		<!--<div class="password">密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" id="password" onmousedown="onshow(this,'text')" onmouseup="onshow(this,'password')">
+			</div>
+	-->
+		<div class="password">密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" id="password" onclick="show()">
+		</div>
+		<button class="password" type="button" id="submit">登录</button>
+		<button type="button" onclick="login()">没有账号？注册</button>
+		<button type="button" onclick="onReset()">重置</button>
+		<br>
+		<br>
+
+
+		<p id="test" title="字段过长用点号代替，鼠标移到上面显示全部内容" style="width:150px;overflow:hidden; white-space:nowrap; text-overflow:ellipsis" onmousemove="style.color='red'" onmouseout="style.color='green'">字段过长用点号代替，鼠标移到上面显示全部内容 </p>
+		
+		<p id="t1" onmouseover="display(this)" class="t1_css">鼠标移到上面显示全部内容</p>
+		<span id="t1_show" class="t2_css" style="visibility: hidden;">鼠标移到上面显示全部内容</span>
+		
+
+	</form>
+
+	<script type="text/javascript" src="../test/js/test.js"></script>
+
+</body>
+</html>

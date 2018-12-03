@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>注册界面</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../test/css/test.css">
+</head>
+<body>
+	<form method="post" id="toLogin" class="form_login">
+		<div class="user">用户名：<input type="text" id="userName"></div>
+		<div class="password">密码：<input type="text" id="password" onmousedown="onshow(this,'text')" onmouseup="onshow(this,'password')"></div>
+		<div class="password">确认密码：<input type="text" id="newpassword" onmousedown="onshow(this,'text')" onmouseup="onshow(this,'password')"></div>
+		<button class="password" type="button" id="login">注册</button>
+		<button type="button" onclick="onReset()">重置</button>
+		<button type="button" onclick="onAdmin()">已有账号？登录</button>
+	</form>
+
+	<script type="text/javascript" src="../test/js/login.js"></script>
+
+</body>
+</html>
