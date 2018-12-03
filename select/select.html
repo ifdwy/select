@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>下拉框模糊查询</title>
+  <link rel="stylesheet" href="../test/commonJQueryCSS/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="../test/commonJQueryJs/jquery-ui.js"></script>
+  <link rel="stylesheet" href="../test/css/s.css">
+  <script src="../test/js/select.js"></script>
+</head>
+<body>
+	
+	  	<label class="lab">省</label>
+		<div>
+			<select class="test" id="unit1" onchange="changeUnit()">
+				<option>11-中国</option>
+				<option>1101-湖南省</option>
+				<option>1102-广东省</option>
+				<option>1103-浙江省</option>
+			</select>
+			
+			<input type="text" name="" class="test1" id="tags">
+		</div>
+		<br>
+		<br>
+		<br>
+		<p><strong>注意:</strong> Internet Explorer 9（更早 IE 版本），Safari 不支持 datalist 标签。</p>
+		<input list="browsers" name="">
+			<datalist id="browsers">
+			  <option value="Internet Explorer">
+			  <option value="Firefox">
+			  <option value="Chrome">
+			  <option value="中国">
+			  <option value="Safari">
+			</datalist>
+</body>
+</html>
