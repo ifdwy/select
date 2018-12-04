@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>图片预览</title>
+    </head>
+<body>
+    <input type="file"><br>
+    <img src="" height="500px" alt="Image preview area..." title="">
+<script>
+    var fileInput = document.querySelector('input[type=file]');
+    var previewImg = document.querySelector('img');
+    
+    //addEventListener() 方法用于向指定元素添加事件句柄。
+    fileInput.addEventListener('change', function () {
+
+    //获取文件对象
+      var file = this.files[0];
+    
+    //创建reader对象
+      var reader = new FileReader();
+     
+    // 监听reader对象的的onload事件，当图片加载完成时，把base64编码賦值给预览图片
+      reader.addEventListener("load", function () {
+          previewImg.src = reader.result;
+      }, false);
+      
+      // 调用reader.readAsDataURL()方法，把图片转成base64
+      reader.readAsDataURL(file);
+  }, false);
+
+</script>
+
+</body>
+</html>
