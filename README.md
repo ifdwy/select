@@ -6,3 +6,5 @@
 3、登录和注册界面
 
 4、利用FileReader实现图片预览功能
+
+5、jQuery zTree插件的使用
