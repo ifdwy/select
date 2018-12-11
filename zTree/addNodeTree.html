@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+  <TITLE> 添加子节点 </TITLE>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="../zTree/zTreeStyle.css" type="text/css">
+  <script type="text/javascript" src="../zTree/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="../zTree/jquery.ztree.core.js"></script>
+  <SCRIPT type="text/javascript">
+    var setting = { };
+
+    var zNodes =[
+    //只添加一个父节点
+      {
+        name:"dsfsf",isParent:true
+      },
+    //添加一个父节点下再带一个父节点
+      { name:"jhjk",open:false,
+        children:[
+          {name:"ssd",isParent:true}
+        ]
+      },
+    //添加父节点下带有子节点
+      { name:"父节点1 - 展开", open:true,
+        children: [
+          { name:"父节点11 - 折叠",
+            children: [
+              { name:"叶子节点111"}
+            ]},
+          { name:"父节点13 - 没有子节点", isParent:true}
+        ]}
+
+    ];
+
+    $(document).ready(function(){
+      $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+      //向其中一个子节点添加叶子节点
+      var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+      var parentNode=treeObj.getNodeByParam("name","dsfsf",null);
+      var newNode = {name:"newNode1"};
+      newNode = treeObj.addNodes(parentNode, newNode);
+   
+    });
+   
+  </SCRIPT>
+</HEAD>
+
+<BODY>
+
+    <ul id="treeDemo" class="ztree"></ul>
+  
+</BODY>
+</HTML>
