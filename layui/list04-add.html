@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>layui-tab选项卡</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+
+<style type="text/css">
+.form-btn{
+  margin-left: 50%;
+  margin-top: 50px;
+}
+</style>
+
+</head>
+<body>
+   <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+      <li class="layui-this" lay-id="11">网站设置</li>
+      <li lay-id="22">用户管理</li>
+      <li lay-id="33">权限分配</li>
+      <li lay-id="44">商品管理</li>
+      <li lay-id="55">订单管理</li>
+    </ul>
+  
+  <br>
+    <div class="layui-tab-content" style="height: 100px;">
+      <div class="layui-tab-item layui-show">
+        
+        <form class="layui-form" action="">
+  
+          <div class="layui-row">
+          <div class="layui-col-md6">
+            <label class="layui-form-label">输入框</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+
+          <div class="layui-col-md6">
+            <label class="layui-form-label">输入框</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+          </div>
+          
+          <br>
+          <div class="layui-row">
+          <div class="layui-col-md6">
+            <label class="layui-form-label">输入框</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+
+          <div class="layui-col-md6">
+            <label class="layui-form-label">输入框</label>
+              <div class="layui-input-block">
+                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+              </div>
+          </div>
+          </div>
+
+          <button class="layui-btn form-btn layui-btn-normal">保存</button>
+          <button class="layui-btn form-btn layui-btn-danger"><a href="../layui/list04.html">关闭</a></button>
+
+        </form>
+
+      </div>
+      
+      <div class="layui-tab-item">2</div>
+      <div class="layui-tab-item">3</div>
+      <div class="layui-tab-item">4</div>
+      <div class="layui-tab-item">5</div>
+      <div class="layui-tab-item">6</div>
+    </div>
+  </div>
+
+</div>
+<script src="../layui/layui.js"></script>
+
+<script>
+  layui.use('element', function(){
+    var $ = layui.jquery,
+    element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+    
+  });
+</script>
+
+
+</body>
+</html>
