@@ -29,24 +29,35 @@
   <div class="layui-side layui-bg-black">
     <div class="layui-side-scroll">
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-        <li class="layui-nav-item layui-nav-itemed">
-          <a class="" href="javascript:;">所有商品</a>
-          <dl class="layui-nav-child">
-            <dd><a href="javascript:;" data-id="1" data-title="列表一" data-url="../layui/list01.html" class="site-demo-active" data-type="tabAdd">列表一</a></dd>
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed draw1">
+          <a class="" href="javascript:;"><i class="layui-icon layui-icon-face-smile" style="color: #1E9FFF;"></i> <span>所有商品</span></a>
+            <dl class="layui-nav-child">
+            <dd><a href="javascript:;" data-id="1" data-title="列表一" data-url="../layui/list01.html" class="site-demo-active" data-type="tabAdd"><span>列表一</span></a></dd>
             
-            <dd><a href="javascript:;" data-id="2" data-title="列表二" data-url="http://www.baidu.com" class="site-demo-active" data-type="tabAdd">列表二</a></dd>
+            <dd><a href="javascript:;" data-id="2" data-title="列表二" data-url="http://www.baidu.com" class="site-demo-active" data-type="tabAdd"><span>列表二</span></a></dd>
+
+            <dd><a href="javascript:;" data-id="3" data-title="列表一" data-url="../layui/list01.html" class="site-demo-active" data-type="tabAdd"><span>列表一</span></a></dd>
+            
+            <dd><a href="javascript:;" data-id="4" data-title="列表二" data-url="http://www.baidu.com" class="site-demo-active" data-type="tabAdd"><span>列表二</span></a></dd>
 
           </dl>
         </li>
         
-        <li class="layui-nav-item">
-          <a href="javascript:;" data-id="3" data-title="云市场" data-url="http://www.baidu.com" class="site-demo-active" data-type="tabAdd">云市场</a>
+        <li class="layui-nav-item draw1">
+          <a href="javascript:;" data-id="3" data-title="云市场" data-url="http://www.baidu.com" class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-face-smile" style="color: #1E9FFF;"></i> <span>云市场</span></a>
         </li>
         
-        <li class="layui-nav-item"><a href="javascript:;" data-id="4" data-title="发布商品" data-url="../layui/list04.html" class="site-demo-active" data-type="tabAdd">发布商品</a></li>
+        <li class="layui-nav-item draw1"><a href="javascript:;" data-id="4" data-title="发布商品" data-url="../layui/list04.html" class="site-demo-active" data-type="tabAdd"><i class="layui-icon layui-icon-senior" style="color: #1E9FFF;"></i><span>发布商品</span></a></li>
       </ul>
     </div>
+
+    <div title="菜单缩放" class="draw kit-side-fold">
+    <i class="layui-icon layui-icon-shrink-right"></i>
+    <i class="layui-icon layui-icon-spread-left" id="left" style="display: none;"></i>
+    </div>
+  
+
   </div>
   
  
@@ -71,6 +82,49 @@
         var element = layui.element;
         // var layer = layui.layer;
         var $ = layui.$;
+
+/**配置左侧导航拉伸js*/
+
+        var isShow = true;  //定义一个标志位
+            $('.kit-side-fold').on('click', function(){
+                //选择出所有的span，并判断是不是hidden
+                $('.draw1 span').each(function(){
+                    if($(this).is(':hidden')){
+                        $(this).show();
+                    }else{
+                        $(this).hide();
+                    }
+                });
+                 //判断isshow的状态
+                if(isShow){
+                    $('.layui-layout-admin .layui-side').width(60);//设置宽度
+                    //将footer和body的宽度修改
+                    $('.layui-tab').css('left', 60+'px');
+                    $('.layui-footer').css('left', 60+'px');
+                    //将二级导航栏隐藏
+                    $('dd span').each(function(){
+                        $(this).hide();
+                    });
+                    $(".layui-icon-shrink-right").hide();
+                    $(".layui-icon-spread-left").show();
+                    //修改标志位
+                    isShow =false;
+                }else{
+                    $('.layui-layout-admin .layui-side').width(200);
+                    $('.kit-side-fold i').css('margin-right', '1%');
+                    $('.layui-tab').css('left', 200+'px');
+                    $('.layui-footer').css('left', 200+'px');
+                    $('dd span').each(function(){
+                        $(this).show();
+                    });
+                    $(".layui-icon-shrink-right").show();
+                    $(".layui-icon-spread-left").hide();
+                    isShow =true;
+                }
+            });
+
+/**配置左侧导航拉伸js*/
+
         // 配置tab实践在下面无法获取到菜单元素
         $('.site-demo-active').on('click', function () {
             var dataid = $(this);
