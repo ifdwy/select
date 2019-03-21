@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Layui 后台布局</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body class="layui-layout-body">
+
+<div class="layui-collapse">
+  <div class="layui-colla-item">
+    <h2 class="layui-colla-title">查询条件</h2>
+    
+    <div class="layui-colla-content">
+        <div class="layui-form-item">
+            <div class="layui-inline inline-left">
+                <input id="menuName" class="layui-input" type="text" placeholder="菜单名称/编码"/>
+             </div>                              
+            <div class="layui-inline">
+                <input id="level" class="layui-input" type="text" placeholder="层级"/>
+            </div>
+        </div>
+    
+              <div class="layui-form-item">
+    <label class="layui-form-label">单行输入框</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+    </div>
+  </div>
+
+    </div>
+  
+  </div>
+</div>
+
+
+<script src="../layui/layui.js"></script>
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element;
+  var layer = layui.layer;
+  
+});
+</script>
+</body>
+</html>
